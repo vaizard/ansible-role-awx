@@ -5,7 +5,7 @@
   register: awx_playbook_already_run
 
 - name: Run the AWX installation playbook.
-  command: "ansible-playbook -i inventory install.yml -e postgres_data_dir={{ postgres_data_dir }} -e create_preload_data={{ create_preload_data }} -e admin_user={{ admin_user }} -e admin_password={{ admin_password }}"
+  command: "ansible-playbook -i inventory install.yml -e postgres_data_dir={{ postgres_data_dir }} -e create_preload_data={{ create_preload_data }} -e admin_user={{ admin_user }} -e admin_password={{ admin_password }} -e project_data_dir={{ project_data_dir }}"
 
   args:
     chdir: "{{ awx_repo_dir }}/installer"
